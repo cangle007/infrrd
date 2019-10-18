@@ -10,9 +10,24 @@ export default class MainComponent extends Component {
     super(props);
     this.state = {
       listSelection: "men",
-      itemAddedCounter: 0
+      itemAddedCounter: 0,
+      searchText: ""
     };
   }
+
+  handle_searchText = () => {
+    this.setState({ searchText: "" });
+  };
+
+  onChange_searchText = event => {
+    let searchTextTarget = event.target.value.toLowerCase().replace(/[&\\#,+()$~%'"*?<>{}[\]']/g, "");
+
+    if (searchTextTarget) {
+      this.setState({ searchText: searchTextTarget });
+    } else {
+      this.setState({ searchText: "" });
+    }
+  };
 
   handle_addItem = event => {
     let { itemAddedCounter, listSelection } = this.state;
@@ -55,13 +70,15 @@ export default class MainComponent extends Component {
 
   render() {
     let { getItemsFlag, items, itemsAdded } = this.props;
-    let { itemAddedCounter, listSelection } = this.state;
+    let { itemAddedCounter, listSelection, searchText } = this.state;
 
     return (
       <div className='main-container'>
         <div id='header-item'>
           <HeaderComponent
             itemAddedCounter={itemAddedCounter}
+            onChange_searchText={this.onChange_searchText}
+            handle_searchText={this.handle_searchText}
             handle_openCheckOutModal={this.handle_openCheckOutModal}
           />
         </div>
@@ -72,6 +89,7 @@ export default class MainComponent extends Component {
           <ContentComponent
             getItemsFlag={getItemsFlag}
             items={items}
+            searchText={searchText}
             listSelection={listSelection}
             handle_addItem={this.handle_addItem}
             handle_deleteItem={this.handle_deleteItem}

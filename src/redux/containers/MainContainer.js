@@ -21,8 +21,8 @@ function mapDispatchToProps(dispatch, ownProps) {
     add_Items: (itemName, listSelection) => {
       dispatch(addItemsProcess(itemName, listSelection));
     },
-    delete_Items: (itemName, listSelection) => {
-      dispatch(deleteItemsProcess(itemName, listSelection));
+    delete_Items: itemName => {
+      dispatch(deleteItemsProcess(itemName));
     },
     get_Item: () => {
       dispatch(getItemsProcess());
