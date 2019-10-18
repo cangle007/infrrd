@@ -1,4 +1,4 @@
-# Infrr's ShoppingCart
+# Infrr
 
 ## PROJECT SUMMARY
 
@@ -8,9 +8,9 @@ NOTE to hiring manager. I had to use a css framework to get an "checkout cart ic
 
 ## React-Redux's architecture
 
-💠 How data flows from **afero-client**'s API into Component-level. It is essential that you understand how the data are flowing from thunk/middleware into Components level, and how date are updated at the Component level or container level
+Data flows from API into Components level, and vice-versa.
 
-**thunk/middleware -> rootReducer -> container -> page -> component**
+**API -> thunk/middleware -> rootReducer -> container -> page -> component**
 
 ## Technologies used
 
