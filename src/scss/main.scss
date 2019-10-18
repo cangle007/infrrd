@@ -1,8 +1,8 @@
 .main-container {
   display: grid;
   grid-template-areas:
-    "header header"
-    "sidebar content";
+    'header header'
+    'sidebar content';
   grid-template-columns: 200px auto;
   grid-template-rows: auto auto;
   //grid-gap: 30px;

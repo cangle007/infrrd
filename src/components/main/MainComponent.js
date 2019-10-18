@@ -1,31 +1,31 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import CheckOutModalComponent from "./CheckOutModalComponent";
-import ContentComponent from "./ContentComponent";
-import HeaderComponent from "./HeaderComponent";
-import SidebarComponent from "./SidebarComponent";
+import CheckOutModalComponent from './CheckOutModalComponent';
+import ContentComponent from './ContentComponent';
+import HeaderComponent from './HeaderComponent';
+import SidebarComponent from './SidebarComponent';
 
 export default class MainComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sidebarQuery: "men",
+      sidebarQuery: 'men',
       itemAddedCounter: 0,
-      filterText: ""
+      filterText: ''
     };
   }
 
   handle_filterText = () => {
-    this.setState({ filterText: "" });
+    this.setState({ filterText: '' });
   };
 
   onChange_filterText = event => {
-    let filterTextTarget = event.target.value.toLowerCase().replace(/[&\\#,+()$~%'"*?<>{}[\]']/g, "");
+    let filterTextTarget = event.target.value.toLowerCase().replace(/[&\\#,+()$~%'"*?<>{}[\]']/g, '');
 
     if (filterTextTarget) {
       this.setState({ filterText: filterTextTarget });
     } else {
-      this.setState({ filterText: "" });
+      this.setState({ filterText: '' });
     }
   };
 
@@ -53,19 +53,19 @@ export default class MainComponent extends Component {
   };
 
   handle_openCheckOutModal = event => {
-    let modal = document.getElementById("checkOutModal");
-    modal.style.display = "block"; //open modal
+    let modal = document.getElementById('checkOutModal');
+    modal.style.display = 'block'; //open modal
 
     window.onclick = event => {
       if (event.target === modal) {
-        modal.style.display = "none"; // When the user clicks anywhere outside of the modal, close it
+        modal.style.display = 'none'; // When the user clicks anywhere outside of the modal, close it
       }
     };
   };
 
   handle_closeCheckOutModal = event => {
-    let modal = document.getElementById("checkOutModal");
-    modal.style.display = "none";
+    let modal = document.getElementById('checkOutModal');
+    modal.style.display = 'none';
   };
 
   render() {

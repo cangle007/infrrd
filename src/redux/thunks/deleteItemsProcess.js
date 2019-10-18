@@ -14,6 +14,6 @@ export default function deleteItemsProcess(itemName) {
       }
     });
 
-    dispatch({ type: "DELETE_ITEMS", itemsAdded: filtered });
+    dispatch({ type: 'DELETE_ITEMS', itemsAdded: filtered });
   };
 }

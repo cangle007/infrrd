@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { Icon } from "semantic-ui-react";
+import { Icon } from 'semantic-ui-react';
 
 export default function CheckOutModalComponent({ itemsAdded, handle_closeCheckOutModal, handle_deleteItem }) {
   return (
@@ -17,7 +17,7 @@ export default function CheckOutModalComponent({ itemsAdded, handle_closeCheckOu
                 <Icon
                   size='big'
                   name='delete'
-                  style={{ color: "black" }}
+                  style={{ color: 'black' }}
                   data-itemname={obj.name}
                   onClick={event => {
                     handle_deleteItem(event);
@@ -46,21 +46,21 @@ export default function CheckOutModalComponent({ itemsAdded, handle_closeCheckOu
         <div className='calculation-container'>
           <div>
             <h1>TOTAL ITEMS</h1>
-            <span>{itemsAdded.length === 0 ? "" : itemsAdded.length}</span>
+            <span>{itemsAdded.length === 0 ? '' : itemsAdded.length}</span>
           </div>
 
           <div>
             <h1>TOTAL AMOUNT USD</h1>
             <span>
               {itemsAdded.length === 0
-                ? "$ 0"
-                : "$ " +
+                ? '$ 0'
+                : '$ ' +
                   itemsAdded
                     .reduce((a, b) => {
                       return a + b.price;
                     }, 0)
                     .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
             </span>
           </div>
         </div>

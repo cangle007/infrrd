@@ -1,25 +1,25 @@
 export default function rootReducer(
   currentState = {
+    getItemsFlag: false,
     items: {},
-    itemsAdded: [],
-    getItemsFlag: false
+    itemsAdded: []
   },
   action
 ) {
   switch (action.type) {
-    case "CLEAR_ROOT_REDUCER":
+    case 'CLEAR_ROOT_REDUCER':
       return { ...currentState, deviceLogs: action.deviceLogs };
 
-    case "ADD_ITEMS":
+    case 'ADD_ITEMS':
       return { ...currentState, itemsAdded: action.itemsAdded };
 
-    case "DELETE_ITEMS":
+    case 'DELETE_ITEMS':
       return { ...currentState, itemsAdded: action.itemsAdded };
 
-    case "FLAG_GET_ITEMS":
+    case 'FLAG_GET_ITEMS':
       return { ...currentState, items: action.items, getItemsFlag: action.getItemsFlag };
 
-    case "GET_ITEMS":
+    case 'GET_ITEMS':
       return { ...currentState, items: action.items, getItemsFlag: action.getItemsFlag };
 
     default:

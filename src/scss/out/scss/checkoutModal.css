@@ -21,7 +21,7 @@
   /* The Close Button */ }
   .modal-container .modal-content {
     display: grid;
-    grid-template-areas: "totalItems totalAmount";
+    grid-template-areas: 'totalItems totalAmount';
     grid-template-columns: auto auto;
     background-color: #fefefe;
     margin: 15% auto;
@@ -48,7 +48,7 @@
   .modal-container .reviewItems-container {
     display: grid;
     grid-area: totalItems;
-    grid-template-areas: "img summary";
+    grid-template-areas: 'img summary';
     grid-template-columns: 200px 150px; }
     .modal-container .reviewItems-container #reviewItemIMG {
       grid-area: img;

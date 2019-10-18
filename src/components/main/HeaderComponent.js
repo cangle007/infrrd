@@ -1,5 +1,5 @@
-import React from "react";
-import { Icon, Input, Popup } from "semantic-ui-react";
+import React from 'react';
+import { Icon, Input, Popup } from 'semantic-ui-react';
 
 export default function HeaderComponent({ itemAddedCounter, handle_openCheckOutModal, onChange_filterText }) {
   return (
@@ -14,7 +14,7 @@ export default function HeaderComponent({ itemAddedCounter, handle_openCheckOutM
             id='cart-item'
             size='big'
             name='plus cart'
-            style={{ color: itemAddedCounter > 0 ? "yellow" : "white" }}
+            style={{ color: itemAddedCounter > 0 ? 'yellow' : 'white' }}
             onClick={handle_openCheckOutModal}
           />
         }

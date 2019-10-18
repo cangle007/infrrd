@@ -1,4 +1,4 @@
-import { items } from "../../api/getItems";
+import { items } from '../../api/getItems';
 
 export default function addItemsProcess(itemName, sidebarQuery) {
   return (dispatch, getState) => {
@@ -10,6 +10,6 @@ export default function addItemsProcess(itemName, sidebarQuery) {
 
     itemsAddedUpdated.push(scope);
 
-    dispatch({ type: "ADD_ITEMS", itemsAdded: itemsAddedUpdated });
+    dispatch({ type: 'ADD_ITEMS', itemsAdded: itemsAddedUpdated });
   };
 }

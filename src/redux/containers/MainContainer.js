@@ -1,12 +1,12 @@
-import { compose, lifecycle } from "recompose";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import MainPage from "../../components/main/MainPage";
+import { compose, lifecycle } from 'recompose';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import MainPage from '../../components/main/MainPage';
 
-import addItemsProcess from "../thunks/addItemsProcess";
-import deleteItemsProcess from "../thunks/deleteItemsProcess";
-import getItemsProcess from "../thunks/getItemsProcess";
-import flag_getItemsProcess from "../thunks/flag_getItemsProcess";
+import addItemsProcess from '../thunks/addItemsProcess';
+import deleteItemsProcess from '../thunks/deleteItemsProcess';
+import getItemsProcess from '../thunks/getItemsProcess';
+import flag_getItemsProcess from '../thunks/flag_getItemsProcess';
 
 function mapStateToProps(state, ownProps) {
   return {

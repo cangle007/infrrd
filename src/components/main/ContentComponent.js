@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 
 export default function ContentComponent({
-  handle_deleteItem,
+  filterText,
   getItemsFlag,
   items,
-  filterText,
   sidebarQuery,
-  handle_addItem
+  handle_addItem,
+  handle_deleteItem
 }) {
   return (
     <div className='content-container'>
       <div id='display-item'>
-        {getItemsFlag === true && sidebarQuery === "men"
+        {getItemsFlag === true && sidebarQuery === 'men'
           ? items.men.map((obj, i) => {
-              let expression = new RegExp(filterText, "g");
+              let expression = new RegExp(filterText, 'g');
               let matched = obj.name.toLowerCase().match(expression);
 
               if (matched) {
@@ -25,7 +25,7 @@ export default function ContentComponent({
 
                     <div id='itemDetails-item'>
                       <span>{obj.name}</span>
-                      <p>{"$ " + obj.price}</p>
+                      <p>{'$ ' + obj.price}</p>
                     </div>
 
                     <div id='cart-item'>
@@ -36,7 +36,7 @@ export default function ContentComponent({
                         }}
                       >
                         +ADD
-                      </span>{" "}
+                      </span>{' '}
                       <span
                         data-itemname={obj.name}
                         onClick={event => {
@@ -52,11 +52,11 @@ export default function ContentComponent({
                 return false;
               }
             })
-          : ""}
+          : ''}
 
-        {getItemsFlag === true && sidebarQuery === "women"
+        {getItemsFlag === true && sidebarQuery === 'women'
           ? items.women.map((obj, i) => {
-              let expression = new RegExp(filterText, "g");
+              let expression = new RegExp(filterText, 'g');
               let matched = obj.name.toLowerCase().match(expression);
 
               if (matched) {
@@ -68,7 +68,7 @@ export default function ContentComponent({
 
                     <div id='itemDetails-item'>
                       <span>{obj.name}</span>
-                      <p>{"$ " + obj.price}</p>
+                      <p>{'$ ' + obj.price}</p>
                     </div>
 
                     <div id='cart-item'>
@@ -79,7 +79,7 @@ export default function ContentComponent({
                         }}
                       >
                         +ADD
-                      </span>{" "}
+                      </span>{' '}
                       <span
                         data-itemname={obj.name}
                         onClick={event => {
@@ -95,7 +95,7 @@ export default function ContentComponent({
                 return false;
               }
             })
-          : ""}
+          : ''}
       </div>
     </div>
   );

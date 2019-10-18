@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Provider } from "react-redux";
-import setupStore from "./redux/setupStore";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import setupStore from './redux/setupStore';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import MainContainer from "./redux/containers/MainContainer";
-import createBrowserHistory from "history/createBrowserHistory"; //deprecating soon. use the one belong?
+import MainContainer from './redux/containers/MainContainer';
+import createBrowserHistory from 'history/createBrowserHistory'; //deprecating soon. use the one belong?
 
 export const history = createBrowserHistory();
 const store = setupStore();

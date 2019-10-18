@@ -14,7 +14,7 @@
 
 .items-container {
   display: grid;
-  grid-template-areas: "itemImage" "itemDetails" "cart";
+  grid-template-areas: 'itemImage' 'itemDetails' 'cart';
   grid-template-columns: 1fr;
   grid-template-rows: 300px 50px 50px;
   background: #323c41;
