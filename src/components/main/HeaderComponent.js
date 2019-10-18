@@ -1,12 +1,7 @@
 import React from "react";
 import { Icon, Input, Popup } from "semantic-ui-react";
 
-export default function HeaderComponent({
-  itemAddedCounter,
-  handle_openCheckOutModal,
-  handle_searchText,
-  onChange_searchText
-}) {
+export default function HeaderComponent({ itemAddedCounter, handle_openCheckOutModal, onChange_searchText }) {
   return (
     <div className='header-container'>
       <Input icon='search' placeholder='Filter...' onChange={onChange_searchText} />

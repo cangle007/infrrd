@@ -78,7 +78,6 @@ export default class MainComponent extends Component {
           <HeaderComponent
             itemAddedCounter={itemAddedCounter}
             onChange_searchText={this.onChange_searchText}
-            handle_searchText={this.handle_searchText}
             handle_openCheckOutModal={this.handle_openCheckOutModal}
           />
         </div>
