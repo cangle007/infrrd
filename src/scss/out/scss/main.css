@@ -1,0 +1,11 @@
+.main-container {
+  display: grid;
+  grid-template-areas: "header header" "sidebar content";
+  grid-template-columns: 200px auto;
+  grid-template-rows: auto auto; }
+  .main-container #header-item {
+    grid-area: header; }
+  .main-container #sidebar-item {
+    grid-area: sidebar; }
+  .main-container #content-item {
+    grid-area: content; }

@@ -1,0 +1,19 @@
+.main-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+  grid-template-columns: 200px auto;
+  grid-template-rows: auto auto;
+  //grid-gap: 30px;
+
+  #header-item {
+    grid-area: header;
+  }
+  #sidebar-item {
+    grid-area: sidebar;
+  }
+  #content-item {
+    grid-area: content;
+  }
+}

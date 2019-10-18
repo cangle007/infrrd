@@ -1,0 +1,67 @@
+.modal-container {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 22;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  /* Modal Content/Box */
+  /* The Close Button */ }
+  .modal-container .modal-content {
+    display: grid;
+    grid-template-areas: "totalItems totalAmount";
+    grid-template-columns: auto auto;
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+    overflow: auto; }
+  .modal-container .closeModal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold; }
+    .modal-container .closeModal:hover, .modal-container .closeModal:focus {
+      color: orange;
+      text-decoration: none;
+      cursor: pointer; }
+  .modal-container .calculation-container {
+    display: grid;
+    grid-area: totalAmount; }
+    .modal-container .calculation-container p {
+      font-weight: bold; }
+  .modal-container .reviewItems-container {
+    display: grid;
+    grid-area: totalItems;
+    grid-template-areas: "img summary";
+    grid-template-columns: 200px 150px; }
+    .modal-container .reviewItems-container #reviewItemIMG {
+      grid-area: img;
+      place-self: center; }
+      .modal-container .reviewItems-container #reviewItemIMG img {
+        height: 200px; }
+    .modal-container .reviewItems-container #reviewItemSummary {
+      grid-area: summary;
+      place-self: center; }
+      .modal-container .reviewItems-container #reviewItemSummary span:nth-child(1) {
+        font-weight: bold; }
+      .modal-container .reviewItems-container #reviewItemSummary span:nth-child(4) {
+        font-weight: bold; }
+      .modal-container .reviewItems-container #reviewItemSummary p {
+        color: black;
+        font-weight: bold; }

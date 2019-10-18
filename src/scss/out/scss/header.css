@@ -1,0 +1,14 @@
+.header-container {
+  display: grid;
+  grid-template-areas: "filter chart";
+  grid-template-columns: auto 50px;
+  grid-template-rows: 110px;
+  background-color: black;
+  grid-gap: 50px;
+  align-items: center;
+  justify-content: end; }
+  .header-container #cart-item {
+    grid-area: chart;
+    color: white; }
+    .header-container #cart-item:hover {
+      color: orange; }
