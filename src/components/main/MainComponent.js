@@ -9,47 +9,47 @@ export default class MainComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listSelection: "men",
+      sidebarQuery: "men",
       itemAddedCounter: 0,
-      searchText: ""
+      filterText: ""
     };
   }
 
-  handle_searchText = () => {
-    this.setState({ searchText: "" });
+  handle_filterText = () => {
+    this.setState({ filterText: "" });
   };
 
-  onChange_searchText = event => {
-    let searchTextTarget = event.target.value.toLowerCase().replace(/[&\\#,+()$~%'"*?<>{}[\]']/g, "");
+  onChange_filterText = event => {
+    let filterTextTarget = event.target.value.toLowerCase().replace(/[&\\#,+()$~%'"*?<>{}[\]']/g, "");
 
-    if (searchTextTarget) {
-      this.setState({ searchText: searchTextTarget });
+    if (filterTextTarget) {
+      this.setState({ filterText: filterTextTarget });
     } else {
-      this.setState({ searchText: "" });
+      this.setState({ filterText: "" });
     }
   };
 
   handle_addItem = event => {
-    let { itemAddedCounter, listSelection } = this.state;
+    let { itemAddedCounter, sidebarQuery } = this.state;
     let { itemname } = event.currentTarget.dataset;
 
-    this.props.add_Items(itemname, listSelection);
+    this.props.add_Items(itemname, sidebarQuery);
     this.setState({ itemAddedCounter: (itemAddedCounter += 1) });
   };
 
   handle_deleteItem = event => {
-    let { itemAddedCounter, listSelection } = this.state;
+    let { itemAddedCounter, sidebarQuery } = this.state;
     let { itemname } = event.currentTarget.dataset;
 
     if (itemAddedCounter > 0) {
-      this.props.delete_Items(itemname, listSelection);
+      this.props.delete_Items(itemname, sidebarQuery);
       this.setState({ itemAddedCounter: (itemAddedCounter -= 1) });
     }
   };
 
-  handle_listSelection = event => {
+  handle_sidebarQuery = event => {
     let { listpicked } = event.currentTarget.dataset;
-    this.setState({ listSelection: listpicked });
+    this.setState({ sidebarQuery: listpicked });
   };
 
   handle_openCheckOutModal = event => {
@@ -70,31 +70,30 @@ export default class MainComponent extends Component {
 
   render() {
     let { getItemsFlag, items, itemsAdded } = this.props;
-    let { itemAddedCounter, listSelection, searchText } = this.state;
+    let { itemAddedCounter, sidebarQuery, filterText } = this.state;
 
     return (
       <div className='main-container'>
         <div id='header-item'>
           <HeaderComponent
             itemAddedCounter={itemAddedCounter}
-            onChange_searchText={this.onChange_searchText}
+            onChange_filterText={this.onChange_filterText}
             handle_openCheckOutModal={this.handle_openCheckOutModal}
           />
         </div>
         <div id='sidebar-item'>
-          <SidebarComponent handle_listSelection={this.handle_listSelection} />
+          <SidebarComponent handle_sidebarQuery={this.handle_sidebarQuery} />
         </div>
         <div id='content-item'>
           <ContentComponent
             getItemsFlag={getItemsFlag}
             items={items}
-            searchText={searchText}
-            listSelection={listSelection}
+            filterText={filterText}
+            sidebarQuery={sidebarQuery}
             handle_addItem={this.handle_addItem}
             handle_deleteItem={this.handle_deleteItem}
           />
         </div>
-
         <CheckOutModalComponent
           itemsAdded={itemsAdded}
           handle_deleteItem={this.handle_deleteItem}

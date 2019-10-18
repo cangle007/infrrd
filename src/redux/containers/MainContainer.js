@@ -18,8 +18,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    add_Items: (itemName, listSelection) => {
-      dispatch(addItemsProcess(itemName, listSelection));
+    add_Items: (itemName, sidebarQuery) => {
+      dispatch(addItemsProcess(itemName, sidebarQuery));
     },
     delete_Items: itemName => {
       dispatch(deleteItemsProcess(itemName));

@@ -1,10 +1,10 @@
 import { items } from "../../api/getItems";
 
-export default function addItemsProcess(itemName, listSelection) {
+export default function addItemsProcess(itemName, sidebarQuery) {
   return (dispatch, getState) => {
     let itemsAddedUpdated = getState().itemsAdded;
 
-    let scope = items[listSelection].find(obj => {
+    let scope = items[sidebarQuery].find(obj => {
       return obj.name === itemName;
     });
 

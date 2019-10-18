@@ -4,16 +4,16 @@ export default function ContentComponent({
   handle_deleteItem,
   getItemsFlag,
   items,
-  searchText,
-  listSelection,
+  filterText,
+  sidebarQuery,
   handle_addItem
 }) {
   return (
     <div className='content-container'>
       <div id='display-item'>
-        {getItemsFlag === true && listSelection === "men"
+        {getItemsFlag === true && sidebarQuery === "men"
           ? items.men.map((obj, i) => {
-              let expression = new RegExp(searchText, "g");
+              let expression = new RegExp(filterText, "g");
               let matched = obj.name.toLowerCase().match(expression);
 
               if (matched) {
@@ -54,9 +54,9 @@ export default function ContentComponent({
             })
           : ""}
 
-        {getItemsFlag === true && listSelection === "women"
+        {getItemsFlag === true && sidebarQuery === "women"
           ? items.women.map((obj, i) => {
-              let expression = new RegExp(searchText, "g");
+              let expression = new RegExp(filterText, "g");
               let matched = obj.name.toLowerCase().match(expression);
 
               if (matched) {

@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../images/logo.png";
 
-export default function SidebarComponent({ handle_listSelection }) {
+export default function SidebarComponent({ handle_sidebarQuery }) {
   return (
     <div className='sidebar-container'>
       <div id='infrrd-item'>
@@ -17,7 +17,7 @@ export default function SidebarComponent({ handle_listSelection }) {
               <th
                 data-listpicked='men'
                 onClick={event => {
-                  handle_listSelection(event);
+                  handle_sidebarQuery(event);
                 }}
               >
                 MEN
@@ -27,7 +27,7 @@ export default function SidebarComponent({ handle_listSelection }) {
               <th
                 data-listpicked='women'
                 onClick={event => {
-                  handle_listSelection(event);
+                  handle_sidebarQuery(event);
                 }}
               >
                 WOMEN
