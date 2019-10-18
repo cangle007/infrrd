@@ -52,12 +52,15 @@ export default function CheckOutModalComponent({ itemsAdded, handle_closeCheckOu
           <div>
             <h1>TOTAL AMOUNT USD</h1>
             <span>
-              {itemsAdded.map(obj => {
-                let sum = 0;
-                sum += obj.price;
-
-                return "$ " + sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-              })}
+              {itemsAdded.length === 0
+                ? "$ 0"
+                : "$ " +
+                  itemsAdded
+                    .reduce((a, b) => {
+                      return a + b.price;
+                    }, 0)
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             </span>
           </div>
         </div>
